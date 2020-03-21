@@ -1,0 +1,87 @@
+{
+  "option": {
+    "build": true,
+    "shield": true,
+    "mulit_channel": true
+  },
+  "keystore": {
+    "path": "xxx",
+    "key_alias": "xxx",
+    "key_store_pass": "xxx",
+    "key_pass": "xxx"
+  },
+  "yingyongbao": {
+    "cos_secret_id": "xxx",
+    "cos_secret_key": "xxx",
+    "cos_bucket_url": "xxx"
+  },
+  "jiagubao": {
+    "username": "xxx",
+    "password": "xxx"
+  },
+  "build": {
+    "project_path": "/Users/zachary/code/workspace/kt_android",
+    "build_variants": [
+      {
+        "task": "assembleBaseOnlineRelease",
+        "output_path": "/app/build/outputs/apk/baseOnline/release",
+        "target_path": "/output/variants/base.apk"
+      },
+      {
+        "task": "assembleOppoOnlineRelease",
+        "output_path": "/app/build/outputs/apk/oppoOnline/release",
+        "target_path": "/output/variants/oppo.apk"
+      },
+      {
+        "task": "assembleVivoOnlineRelease",
+        "output_path": "/app/build/outputs/apk/vivoOnline/release",
+        "target_path": "/output/variants/vivo.apk"
+      },
+      {
+        "task": "assembleHuaweiOnlineRelease",
+        "output_path": "/app/build/outputs/apk/huaweiOnline/release",
+        "target_path": "/output/variants/huawei.apk"
+      }
+    ]
+  },
+  "shield": {
+    "legu": [
+      {
+        "apk_path": "/output/variants/base.apk",
+        "target_name": "/output/variants/yingyongbao.apk"
+      }
+    ],
+    "jiagubao": [
+      {
+        "apk_path": "/output/variants/base.apk",
+        "target_name": "/output/variants/360.apk"
+      }
+    ]
+  },
+  "channel": [
+    {
+      "apk_path": "/output/variants/yingyongbao.apk",
+      "channel_name": "kt_yingyongbao"
+    },
+    {
+      "apk_path": "/output/variants/360.apk",
+      "channel_name": "kt_360"
+    },
+    {
+      "apk_path": "/output/variants/oppo.apk",
+      "channel_name": "kt_oppo"
+    },
+    {
+      "apk_path": "/output/variants/vivo.apk",
+      "channel_name": "kt_vivo"
+    },
+    {
+      "apk_path": "/output/variants/huawei.apk",
+      "channel_name": "kt_huawei"
+    }
+  ],
+  "channels": {
+    "channel_file_path": "/channel.txt",
+    "apk_path": "/output/variants/base.apk"
+  }
+}
